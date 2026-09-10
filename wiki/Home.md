@@ -23,6 +23,6 @@ Welcome to the official **`traces-sm`** Knowledge Base and Project Wiki. Here yo
 
 ### 🔗 Quick Resources
 * **Official Portal**: [https://ttraces.io](https://ttraces.io)
-* **GitHub Repository**: [https://github.com/arjun-traces/traces-sm](https://github.com/arjun-traces/traces-sm)
-* **Contributing Guidelines**: [https://github.com/arjun-traces/traces-sm/blob/main/CONTRIBUTING.md](https://github.com/arjun-traces/traces-sm/blob/main/CONTRIBUTING.md)
+* **GitHub Repository**: [https://github.com/ttraces-io/secrets-manager](https://github.com/ttraces-io/secrets-manager)
+* **Contributing Guidelines**: [https://github.com/ttraces-io/secrets-manager/blob/main/CONTRIBUTING.md](https://github.com/ttraces-io/secrets-manager/blob/main/CONTRIBUTING.md)
 * **Community Discord**: [Join Discord](https://discord.gg/traces)

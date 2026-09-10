@@ -1,4 +1,4 @@
-﻿cff-version: 1.2.0
+cff-version: 1.2.0
 message: "If you use traces-sm in your research or project, please cite it as below."
 authors:
   - family-names: "Traces"
@@ -6,4 +6,4 @@ authors:
 title: "traces-sm: 100% Rust-Native Multi-OS NIST SP 800-57 SGX Secrets & Key Management Framework"
 version: 0.1.0
 date-released: 2026-08-25
-url: "https://github.com/arjun-traces/traces-sm"
+url: "https://github.com/ttraces-io/secrets-manager"

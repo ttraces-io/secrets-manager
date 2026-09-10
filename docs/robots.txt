@@ -11,5 +11,4 @@ User-agent: OAI-SearchBot
 Allow: /
 User-agent: Google-Extended
 Allow: /
-
-Sitemap: https://arjun-traces.github.io/traces-sm/sitemap.xml
+Sitemap: https://ttraces-io.github.io/secrets-manager/sitemap.xml

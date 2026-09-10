@@ -38,7 +38,7 @@
 ## 🛠️ Detailed Task Action Items
 
 ### Phase 1: GitHub Pages Setup
-- [x] Enable GitHub Pages in repository settings (`arjun-traces/traces-sm` -> Settings -> Pages -> Source: GitHub Actions).
+- [x] Enable GitHub Pages in repository settings (`ttraces-io/secrets-manager` -> Settings -> Pages -> Source: GitHub Actions).
 - [x] Verify Jekyll dark mode theme rendering for NIST specifications.
 - [x] Add WebAssembly demo iframe loader to `docs/index.md`.
 

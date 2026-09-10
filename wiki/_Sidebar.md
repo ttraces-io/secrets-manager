@@ -20,6 +20,6 @@
 
 ### 🔗 Project Links
 * 🌐 [**Official Portal**](https://ttraces.io)
-* 💻 [**Source Repository**](https://github.com/arjun-traces/traces-sm)
+* 💻 [**Source Repository**](https://github.com/ttraces-io/secrets-manager)
 * 💬 [**Discord Community**](https://discord.gg/traces)
-* 📜 [**Contributing Guide**](https://github.com/arjun-traces/traces-sm/blob/main/CONTRIBUTING.md)
+* 📜 [**Contributing Guide**](https://github.com/ttraces-io/secrets-manager/blob/main/CONTRIBUTING.md)

@@ -5,43 +5,43 @@ permalink: /sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://arjun-traces.github.io/traces-sm/</loc>
+    <loc>https://ttraces-io.github.io/secrets-manager/</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://arjun-traces.github.io/traces-sm/vs-hashicorp-vault/</loc>
+    <loc>https://ttraces-io.github.io/secrets-manager/vs-hashicorp-vault/</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://arjun-traces.github.io/traces-sm/sgx-key-management/</loc>
+    <loc>https://ttraces-io.github.io/secrets-manager/sgx-key-management/</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://arjun-traces.github.io/traces-sm/rust-zeroize-secrets/</loc>
+    <loc>https://ttraces-io.github.io/secrets-manager/rust-zeroize-secrets/</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://arjun-traces.github.io/traces-sm/remote-attestation/</loc>
+    <loc>https://ttraces-io.github.io/secrets-manager/remote-attestation/</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://arjun-traces.github.io/traces-sm/fips-140-3/</loc>
+    <loc>https://ttraces-io.github.io/secrets-manager/fips-140-3/</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://arjun-traces.github.io/traces-sm/post-quantum-status/</loc>
+    <loc>https://ttraces-io.github.io/secrets-manager/post-quantum-status/</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

@@ -73,8 +73,8 @@ All cryptographic buffers, key shares, and plaintexts utilize Rust's `zeroize` c
 ### How do I run `traces-sm` locally?
 ```bash
 # Clone repository
-git clone https://github.com/arjun-traces/traces-sm.git
-cd traces-sm
+git clone https://github.com/ttraces-io/secrets-manager.git
+cd secrets-manager
 
 # Run Desktop Application
 cd desktop && cargo run --release
@@ -99,7 +99,7 @@ Every calendar month, one lucky GitHub contributor who submits a merged, meaning
 ### Where can I join the community discussions?
 * **Ecosystem Hub**: [https://ttraces.io](https://ttraces.io)
 * **Discord Community**: [https://discord.gg/traces](https://discord.gg/traces)
-* **GitHub Discussions**: [arjun-traces/traces-sm Discussions](https://github.com/arjun-traces/traces-sm/discussions)
+* **GitHub Discussions**: [ttraces-io/secrets-manager Discussions](https://github.com/ttraces-io/secrets-manager/discussions)
 
 ### Where can I donate to support the project?
 Open donations are gratefully accepted to our Solana (SOL) address:

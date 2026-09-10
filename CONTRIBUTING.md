@@ -2,7 +2,7 @@
 
 Welcome! We appreciate your interest in contributing to **`traces-sm`**.
 
-Official Guide URL: [https://github.com/arjun-traces/traces-sm/CONTRIBUTING.md](https://github.com/arjun-traces/traces-sm/CONTRIBUTING.md)
+Official Guide URL: [https://github.com/ttraces-io/secrets-manager/CONTRIBUTING.md](https://github.com/ttraces-io/secrets-manager/CONTRIBUTING.md)
 
 ---
 

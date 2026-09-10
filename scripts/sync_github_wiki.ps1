@@ -1,6 +1,6 @@
-# Script to synchronize wiki/ folder to GitHub Wiki repo (arjun-traces/traces-sm.wiki.git)
+# Script to synchronize wiki/ folder to GitHub Wiki repo (ttraces-io/secrets-manager.wiki.git)
 param (
-    [string]$WikiRepoUrl = "https://github.com/arjun-traces/traces-sm.wiki.git"
+    [string]$WikiRepoUrl = "https://github.com/ttraces-io/secrets-manager.wiki.git"
 )
 
 $wikiDir = "$env:TEMP\traces-sm-wiki"

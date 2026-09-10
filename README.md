@@ -64,13 +64,14 @@ It delivers full compliance with **NIST SP 800-57 / SP 800-130 / FIPS 140-3** li
 
 ```
 Secrets-Manager/
-├── Cargo.toml                  ← Root Workspace Manifest ([workspace] members = ["enclave", "host", "gui", "cli", "desktop"])
+├── Cargo.toml                  ← Root Workspace Manifest ([workspace] members = ["enclave", "host", "gui", "cli", "desktop", "devtest"])
 ├── bounty_bot/                 ← AI Bot for Vulnerability Bounties & Security Research Aggregation
 │   ├── data/                   ← Master & platform-partitioned JSON datasets (bounties.json)
 │   ├── src/                    ← Discovery engine, Gemini policy parser, deduplicator, generators
 │   └── README.md               ← Complete searchable bug bounty directory
 ├── desktop/                    ← Cross-Platform Native Desktop App (Ubuntu, Windows, macOS via eframe/egui)
-├── gui/                        ← Rust WebAssembly Web GUI (Yew 0.21 compiled to `wasm32-unknown-unknown`)
+├── devtest/                    ← Multi-Tier Automated Enterprise Verification Harness (14 Suites)
+├── gui/                        ← Rust WebAssembly & React Web GUI
 ├── host/                       ← Rust Native Host Proxy (Axum 0.7 + Tokio + Rusqlite)
 ├── cli/                        ← Rust Native Multi-OS CLI Tool (`traces-sm` binary)
 └── enclave/                    ← Rust SGX Enclave (Fortanix EDP `x86_64-fortanix-unknown-sgx`)
@@ -91,7 +92,10 @@ cd ../host && cargo run --release
 # 3. CLI Key Generation Command
 cd cli && cargo run --release -- key generate --name master-key --algorithm rsa-4096
 
-# 4. Run Security Bounty AI Bot
+# 4. Run DevTest Verification Harness
+cargo test -p traces-sm-devtest -- --nocapture
+
+# 5. Run Security Bounty AI Bot
 cd bounty_bot && uv run python -m src.main
 ```
 
@@ -107,13 +111,19 @@ cd bounty_bot && uv run python -m src.main
 # 1. Run all Rust workspace unit, integration, and security tests (FLOSS)
 cargo test --workspace --locked -- --nocapture
 
-# 2. Run specific crate tests (e.g. SGX enclave cryptographic & zeroization tests)
+# 2. Run the complete 14-suite DevTest verification harness
+cargo test -p traces-sm-devtest -- --nocapture
+
+# 3. Run DevTest CLI diagnostic runner with Markdown audit report
+cargo run -p traces-sm-devtest -- --all --report devtest/test_report.md
+
+# 4. Run specific crate tests (e.g. SGX enclave cryptographic & zeroization tests)
 cargo test -p traces-sm-enclave -- --nocapture
 
-# 3. Run Python Bounty Bot test suite (pytest)
+# 5. Run Python Bounty Bot test suite (pytest)
 cd bounty_bot && uv sync && uv run pytest
 
-# 4. Run automated code formatting & linter checks
+# 6. Run automated code formatting & linter checks
 cargo fmt --all -- --check
 cargo clippy --workspace --all-targets -- -D warnings
 ```
@@ -348,7 +358,7 @@ To give back to our community, **one lucky GitHub contributor wins $100 in Bitco
 3. Submit a Pull Request referencing the community discussion.
 4. **Planned Checkpoints**: At planned checkpoints, the branches are merged to ensure unstable, unpublished versions are accessible for testing and improvements.
 
-📖 For complete details, see [**`CONTRIBUTING.md`**](https://github.com/arjun-traces/traces-sm/CONTRIBUTING.md).
+📖 For complete details, see [**`CONTRIBUTING.md`**](https://github.com/ttraces-io/secrets-manager/CONTRIBUTING.md).
 
 ---
 
@@ -367,7 +377,7 @@ If you find `traces-sm` useful and want to support ongoing development, research
 
 If you encounter any bugs, security anomalies, performance bottlenecks, or unexpected behavior, please report them directly on our issue tracker:
 
-👉 **[Submit or Browse Issues on GitHub](https://github.com/arjun-traces/traces-sm/issues)**
+👉 **[Submit or Browse Issues on GitHub](https://github.com/ttraces-io/secrets-manager/issues)**
 
 When creating an issue:
 1. Search existing open and closed issues to avoid duplicates.
@@ -396,5 +406,3 @@ When creating an issue:
 
 Project badge entry owned by: [boosters-research](https://www.bestpractices.dev/en/users/56453).Entry created on 2026-09-07 03:59:29 UTC, last updated on 2026-09-07 09:07:03 UTC.
 This data is available under the [Community Data License Agreement – Permissive, Version 2.0 (CDLA-Permissive-2.0)](https://cdla.dev/permissive-2-0/). The code is licensed under Apache.
-
-

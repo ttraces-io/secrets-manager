@@ -95,5 +95,5 @@ flowchart TB
 `traces-sm` bridges the gap between complex hardware security modules (HSMs costing tens of thousands of dollars) and software-only secrets managers. By leveraging commodity Intel SGX CPUs and cloud confidential computing nodes (Azure DC-series, GCP Confidential VMs, AWS Nitro/SGX), organizations achieve military-grade secret protection at standard cloud operational costs.
 
 * **Ecosystem Hub**: [https://ttraces.io](https://ttraces.io)
-* **Open Source Repository**: [https://github.com/arjun-traces/traces-sm](https://github.com/arjun-traces/traces-sm)
+* **Open Source Repository**: [https://github.com/ttraces-io/secrets-manager](https://github.com/ttraces-io/secrets-manager)
 * **Community & Governance**: Fully open-source under dual Apache-2.0 / MIT licensing with monthly contributor rewards.

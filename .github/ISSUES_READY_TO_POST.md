@@ -1,6 +1,6 @@
 # GitHub Issues Ready to Post for `traces-sm`
 
-This document contains 8 fully formulated, high-impact GitHub Issues ready to be created in the [arjun-traces/traces-sm](https://github.com/arjun-traces/traces-sm/issues) repository.
+This document contains 8 fully formulated, high-impact GitHub Issues ready to be created in the [ttraces-io/secrets-manager](https://github.com/ttraces-io/secrets-manager/issues) repository.
 
 ---
 
@@ -77,7 +77,7 @@ To support our Monthly $100 BTC Contributor Reward, we need an automated Python 
 
 ### Requirements
 1. Script located at `scripts/monthly_contributor_raffle.py`.
-2. Uses `httpx` or `gh api` to fetch merged PR authors for `arjun-traces/traces-sm`.
+2. Uses `httpx` or `gh api` to fetch merged PR authors for `ttraces-io/secrets-manager`.
 3. Filters out bots and disqualified accounts.
 4. Outputs the winner, list of participants, and the randomness seed/proof.
 
