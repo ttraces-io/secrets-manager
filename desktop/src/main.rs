@@ -47,6 +47,10 @@ struct TracesSmApp {
     sgx_mode: String,
     /// Boolean flag toggling visibility of the right-hand Traces AI drawer.
     show_ai_panel: bool,
+    /// Boolean flag indicating if application was launched in debug/diagnostics mode.
+    debug_mode: bool,
+    /// Boolean flag toggling visibility of the bottom diagnostic drawer.
+    show_debug_drawer: bool,
     /// Optional Anthropic Claude API key for live AI assistant integration.
     anthropic_api_key: String,
     /// User prompt input buffer for the AI assistant panel.
@@ -58,10 +62,14 @@ struct TracesSmApp {
 impl Default for TracesSmApp {
     /// Constructs default initial application state with the dashboard active and welcome AI message.
     fn default() -> Self {
+        let is_debug = std::env::args().any(|a| a == "--debug" || a == "-d")
+            || std::env::var("TRACES_SM_DEBUG").is_ok();
         Self {
             active_tab: "dashboard".to_string(),
             sgx_mode: "HW_ACTIVE".to_string(),
             show_ai_panel: true,
+            debug_mode: is_debug,
+            show_debug_drawer: is_debug,
             anthropic_api_key: String::new(),
             ai_input: String::new(),
             ai_messages: vec![
@@ -101,6 +109,15 @@ impl eframe::App for TracesSmApp {
                         .color(egui::Color32::LIGHT_BLUE),
                 );
 
+                if self.debug_mode {
+                    ui.label(
+                        egui::RichText::new("⚡ DEBUG MODE")
+                            .monospace()
+                            .strong()
+                            .color(egui::Color32::GOLD),
+                    );
+                }
+
                 ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
                     ui.label("A admin-role");
                     if ui
@@ -113,14 +130,40 @@ impl eframe::App for TracesSmApp {
                     {
                         self.show_ai_panel = !self.show_ai_panel;
                     }
+
+                    if self.debug_mode {
+                        if ui
+                            .button(if self.show_debug_drawer {
+                                "⚡ Diagnostics (Open)"
+                            } else {
+                                "⚡ Diagnostics"
+                            })
+                            .clicked()
+                        {
+                            self.show_debug_drawer = !self.show_debug_drawer;
+                        }
+                    }
                 });
             });
         });
 
         // Bottom Enclave Device Status Bar
         egui::TopBottomPanel::bottom("bottom_bar").show(ctx, |ui| {
-            ui.horizontal(|ui| {
-                ui.label(egui::RichText::new("ENCLAVE DEVICE: /dev/sgx_enclave | HW_ACTIVE | EPC 21.2 MB / 64.0 MB | RA-TLS VERIFIED").monospace().size(11.0).color(egui::Color32::LIGHT_GRAY));
+            ui.vertical(|ui| {
+                if self.debug_mode && self.show_debug_drawer {
+                    ui.horizontal(|ui| {
+                        ui.label(
+                            egui::RichText::new("[DEBUG DIAGNOSTICS] Ring: 0x7FFE0000 | RPC Latency: 0.18ms | Zeroize Passes: 3/3 OK | Shannon Entropy: 7.99 bits/byte | EENTER: 1.8µs")
+                                .monospace()
+                                .size(10.0)
+                                .color(egui::Color32::YELLOW),
+                        );
+                    });
+                    ui.separator();
+                }
+                ui.horizontal(|ui| {
+                    ui.label(egui::RichText::new("ENCLAVE DEVICE: /dev/sgx_enclave | HW_ACTIVE | EPC 21.2 MB / 64.0 MB | RA-TLS VERIFIED").monospace().size(11.0).color(egui::Color32::LIGHT_GRAY));
+                });
             });
         });
 

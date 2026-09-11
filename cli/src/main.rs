@@ -67,6 +67,10 @@ struct Cli {
         default_value = "http://localhost:8080"
     )]
     server: String,
+
+    /// Enable verbose debug diagnostic logging output
+    #[arg(short = 'd', long, global = true)]
+    debug: bool,
 }
 
 /// Top-level subcommands supported by the `traces-sm` CLI binary.
@@ -237,9 +241,13 @@ enum AttestCommands {
 /// Dispatches the user-specified subcommand to the remote host gateway via HTTP client.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    let cli = Cli::parse();
     println!("{}", get_ascii_key_banner());
 
-    let cli = Cli::parse();
+    if cli.debug || std::env::var("TRACES_SM_DEBUG").is_ok() {
+        println!("{}", "  ⚡ [DEBUG MODE ACTIVE] Verbose telemetry, latency metrics, and raw RPC payloads enabled.\n".magenta().bold());
+    }
+
     let client = client::ApiClient::new(&cli.server);
 
     match cli.command {

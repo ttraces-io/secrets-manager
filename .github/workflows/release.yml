@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   build-release-binaries:
-    name: Build Release Binaries (${{ matrix.target }})
+    name: Build Release & Debug Binaries (${{ matrix.target }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -25,19 +25,27 @@ jobs:
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
             cli_artifact: traces-sm-linux-x86_64
+            cli_debug_artifact: traces-sm-linux-x86_64-debug
             desktop_artifact: traces-sm-desktop-linux-x86_64
+            desktop_debug_artifact: traces-sm-desktop-linux-x86_64-debug
           - os: windows-latest
             target: x86_64-pc-windows-msvc
             cli_artifact: traces-sm-windows-x86_64.exe
+            cli_debug_artifact: traces-sm-windows-x86_64-debug.exe
             desktop_artifact: traces-sm-desktop-windows-x86_64.exe
+            desktop_debug_artifact: traces-sm-desktop-windows-x86_64-debug.exe
           - os: macos-latest
             target: aarch64-apple-darwin
             cli_artifact: traces-sm-macos-aarch64
+            cli_debug_artifact: traces-sm-macos-aarch64-debug
             desktop_artifact: traces-sm-desktop-macos-aarch64
+            desktop_debug_artifact: traces-sm-desktop-macos-aarch64-debug
           - os: macos-13
             target: x86_64-apple-darwin
             cli_artifact: traces-sm-macos-x86_64
+            cli_debug_artifact: traces-sm-macos-x86_64-debug
             desktop_artifact: traces-sm-desktop-macos-x86_64
+            desktop_debug_artifact: traces-sm-desktop-macos-x86_64-debug
 
     steps:
       - name: Checkout Repository
@@ -57,20 +65,32 @@ jobs:
       - name: Cache Cargo Dependencies
         uses: Swatinem/rust-cache@v2
 
-      - name: Build Release Binaries (CLI & Desktop)
+      - name: Build Standard Release Binaries (CLI & Desktop)
         run: |
           cargo build --release --target ${{ matrix.target }} -p traces-sm -p traces-sm-desktop
+
+      - name: Build Debug Mode Diagnostic Binaries (CLI & Desktop)
+        run: |
+          cargo build --target ${{ matrix.target }} -p traces-sm -p traces-sm-desktop
 
       - name: Prepare Binary Artifacts
         shell: bash
         run: |
           mkdir -p release_assets
           if [ "${{ runner.os }}" = "Windows" ]; then
+            # Release Binaries
             cp target/${{ matrix.target }}/release/traces-sm.exe release_assets/${{ matrix.cli_artifact }}
             cp target/${{ matrix.target }}/release/traces-sm-desktop.exe release_assets/${{ matrix.desktop_artifact }}
+            # Debug Mode Binaries
+            cp target/${{ matrix.target }}/debug/traces-sm.exe release_assets/${{ matrix.cli_debug_artifact }}
+            cp target/${{ matrix.target }}/debug/traces-sm-desktop.exe release_assets/${{ matrix.desktop_debug_artifact }}
           else
+            # Release Binaries
             cp target/${{ matrix.target }}/release/traces-sm release_assets/${{ matrix.cli_artifact }}
             cp target/${{ matrix.target }}/release/traces-sm-desktop release_assets/${{ matrix.desktop_artifact }}
+            # Debug Mode Binaries
+            cp target/${{ matrix.target }}/debug/traces-sm release_assets/${{ matrix.cli_debug_artifact }}
+            cp target/${{ matrix.target }}/debug/traces-sm-desktop release_assets/${{ matrix.desktop_debug_artifact }}
           fi
 
       - name: Upload Binary Assets

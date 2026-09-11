@@ -1,0 +1,12 @@
+# Site-level Git Sync mapping for GitBook
+site:
+  title: "traces-sm — Secrets Manager & Cryptographic Enclave Documentation"
+  spaces:
+    - path: "guides"
+      title: "Guides & Quickstart"
+    - path: "specifications"
+      title: "Specifications & Standards"
+    - path: "api-reference"
+      title: "API & Protocol Reference"
+    - path: "knowledge-base"
+      title: "Knowledge Base & Architecture"
