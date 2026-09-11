@@ -78,7 +78,7 @@ impl KeyLifecycleState {
 }
 
 /// Bitmask-style capability permissions governing allowed cryptographic actions for a key.
-#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize, Default)]
 pub struct KeyUsage {
     pub sign: bool,
     pub verify: bool,
@@ -87,20 +87,6 @@ pub struct KeyUsage {
     pub key_wrap: bool,
     pub derive_key: bool,
     pub authenticate: bool,
-}
-
-impl Default for KeyUsage {
-    fn default() -> Self {
-        Self {
-            sign: false,
-            verify: false,
-            encrypt: false,
-            decrypt: false,
-            key_wrap: false,
-            derive_key: false,
-            authenticate: false,
-        }
-    }
 }
 
 pub use zeroize::Zeroizing;

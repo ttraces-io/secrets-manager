@@ -175,7 +175,7 @@ fn miller_rabin(n: &BigUint, k: u32) -> bool {
         // Random base a in [2, n-2]
         let a = loop {
             let candidate = rng.gen_biguint_range(&two, &(n - &two));
-            if &candidate >= &two {
+            if candidate >= two {
                 break candidate;
             }
         };
@@ -215,7 +215,7 @@ fn extended_gcd(a: &BigUint, b: &BigUint) -> (BigUint, num_bigint::BigInt, num_b
     let t = if b.is_zero() {
         BigInt::zero()
     } else {
-        (BigInt::from(old_r.clone()) - &old_s * BigInt::from(a.clone())) / BigInt::from(b.clone())
+        (old_r.clone() - &old_s * BigInt::from(a.clone())) / BigInt::from(b.clone())
     };
 
     (old_r.to_biguint().unwrap_or_default(), old_s, t)

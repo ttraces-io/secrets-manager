@@ -12,9 +12,9 @@
 
 mod common;
 
-use common::{FixedKeyProvider, TempStore};
+use common::FixedKeyProvider;
 use traces_sm_enclave::crypto::{decrypt_secret, encrypt_secret};
-use traces_sm_enclave::sealing::{seal, unseal, SimSealingProvider};
+use traces_sm_enclave::sealing::{seal, unseal};
 
 const NONCE_LEN: usize = 12;
 const TAG_LEN: usize = 16;

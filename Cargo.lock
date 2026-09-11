@@ -5898,6 +5898,33 @@ dependencies = [
 ]
 
 [[package]]
+name = "traces-sm-devtest"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "base64",
+ "chrono",
+ "colored",
+ "env_logger",
+ "hex",
+ "libsqlite3-sys",
+ "log",
+ "num-bigint",
+ "num-traits",
+ "rand",
+ "reqwest",
+ "rusqlite",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tempfile",
+ "tokio",
+ "traces-sm-enclave",
+ "uuid",
+ "zeroize",
+]
+
+[[package]]
 name = "traces-sm-enclave"
 version = "0.1.0"
 dependencies = [
@@ -5963,6 +5990,7 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "chrono",
+ "libsqlite3-sys",
  "once_cell",
  "reqwest",
  "rusqlite",

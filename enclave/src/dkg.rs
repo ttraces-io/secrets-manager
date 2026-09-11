@@ -349,7 +349,7 @@ pub fn split_secret_vss(
     // Compute coefficient commitments C_k = a_k·G + b_k·H
     let mut coeff_commitments_hex = Vec::with_capacity(threshold);
     for k in 0..threshold {
-        let point = (*g * &secret_coeffs[k]) + (&h * &blinding_coeffs[k]);
+        let point = (*g * &secret_coeffs[k]) + (h * blinding_coeffs[k]);
         coeff_commitments_hex.push(hex::encode(point.compress().to_bytes()));
     }
 
@@ -442,7 +442,7 @@ pub fn verify_vss_commitment(share: &SecretShare, commitment: &VssCommitment) ->
     // LHS = s_i·G + r_i·H
     let g = &RISTRETTO_BASEPOINT_TABLE;
     let h = crate::zkp::pedersen::pedersen_h();
-    let lhs = (*g * &s_scalar) + (&h * &r_scalar);
+    let lhs = (*g * &s_scalar) + (h * r_scalar);
 
     // RHS = sum_{k=0}^{t-1} (x_i^k)·C_k
     let mut rhs = RistrettoPoint::identity();

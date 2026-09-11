@@ -1,4 +1,4 @@
-name: CI & Build Pipeline
+name: CI & Test Pipeline
 
 on:
   push:
@@ -37,10 +37,13 @@ jobs:
       - name: Build workspace (all targets)
         run: cargo build --workspace --all-targets
 
-      - name: Run test suite
+      - name: Run Core Test Suite
         run: cargo test --workspace -- --nocapture
 
-      - name: Report ignored conformance gaps
+      - name: Run DevTest Verification Harness
+        run: cargo test -p traces-sm-devtest -- --nocapture
+
+      - name: Report Ignored Conformance Gaps
         if: always()
         run: cargo test --workspace -- --ignored --list || true
 
@@ -100,29 +103,25 @@ jobs:
           cd bounty_bot
           uv run pytest
 
-      - name: Run Bounty Bot Dry Run (if API key available)
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          cd bounty_bot
-          uv run python -m src.main
-
   # ---------------------------------------------------------------------------
-  # Cross-Platform Desktop Compilation Matrix
+  # Cross-Platform Matrix (Linux, Windows, macOS)
   # ---------------------------------------------------------------------------
-  desktop-build-matrix:
-    name: Desktop App Build (${{ matrix.os }})
+  cross-platform-matrix:
+    name: Multi-Platform Build & Test (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         include:
           - os: ubuntu-latest
-            artifact_name: traces-sm-desktop-linux
+            cli_artifact: traces-sm-cli-linux
+            desktop_artifact: traces-sm-desktop-linux
           - os: windows-latest
-            artifact_name: traces-sm-desktop-windows.exe
+            cli_artifact: traces-sm-cli-windows.exe
+            desktop_artifact: traces-sm-desktop-windows.exe
           - os: macos-latest
-            artifact_name: traces-sm-desktop-macos
+            cli_artifact: traces-sm-cli-macos
+            desktop_artifact: traces-sm-desktop-macos
 
     steps:
       - name: Checkout Repository
@@ -140,25 +139,27 @@ jobs:
       - name: Cache Cargo Dependencies
         uses: Swatinem/rust-cache@v2
 
-      - name: Build Desktop Application Binary
+      - name: Build CLI & Desktop Binaries
         run: |
-          cd desktop
-          cargo build --release
+          cargo build --release -p traces-sm -p traces-sm-desktop
 
-      - name: Upload Desktop Artifact
+      - name: Run DevTest on ${{ matrix.os }}
+        run: |
+          cargo test -p traces-sm-devtest -- --nocapture
+
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.artifact_name }}
+          name: binaries-${{ matrix.os }}
           path: |
+            target/release/traces-sm
+            target/release/traces-sm.exe
             target/release/traces-sm-desktop
             target/release/traces-sm-desktop.exe
-            desktop/target/release/traces-sm-desktop
-            desktop/target/release/traces-sm-desktop.exe
           if-no-files-found: warn
 
   # ---------------------------------------------------------------------------
   # Continuous Fuzz Testing (cargo-fuzz / libFuzzer)
-  # Continuously fuzzes ASN.1 parsing, JSON-RPC endpoints, and Base64 decoders
   # ---------------------------------------------------------------------------
   cargo-fuzz-testing:
     name: Continuous Fuzz Testing (libFuzzer)
@@ -226,7 +227,3 @@ jobs:
         run: |
           cd gui
           npm run build
-
-
-
-

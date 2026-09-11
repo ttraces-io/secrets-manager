@@ -102,7 +102,7 @@ pub fn commit_with_blinding(
     let g = &RISTRETTO_BASEPOINT_TABLE;
     let h = pedersen_h();
     let v_scalar = Scalar::from(value);
-    let c = (*g * &v_scalar) + (&h * blinding);
+    let c = (*g * &v_scalar) + (h * blinding);
     Ok(PedersenCommitment {
         point_hex: hex::encode(c.compress().to_bytes()),
     })

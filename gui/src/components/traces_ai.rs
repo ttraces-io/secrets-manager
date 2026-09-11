@@ -28,7 +28,7 @@ pub struct ChatMessage {
 /// Slide-over drawer component for conversational enclave telemetry assistance.
 #[function_component(TracesAiPanel)]
 pub fn traces_ai_panel(props: &TracesAiProps) -> Html {
-    let api_key = use_state(|| String::new());
+    let api_key = use_state(String::new);
     let messages = use_state(|| {
         vec![
         ChatMessage {
@@ -37,7 +37,7 @@ pub fn traces_ai_panel(props: &TracesAiProps) -> Html {
         }
     ]
     });
-    let input_text = use_state(|| String::new());
+    let input_text = use_state(String::new);
 
     if !props.is_open {
         return html! {};

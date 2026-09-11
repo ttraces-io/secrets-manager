@@ -180,7 +180,7 @@ impl NonceSequence for OneTimeNonce {
     fn advance(&mut self) -> Result<Nonce, ring::error::Unspecified> {
         self.0
             .take()
-            .map(|b| Nonce::assume_unique_for_key(b))
+            .map(Nonce::assume_unique_for_key)
             .ok_or(ring::error::Unspecified)
     }
 }

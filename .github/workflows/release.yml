@@ -1,4 +1,4 @@
-name: Release Desktop Application & Artifacts
+name: Release Application & Binaries
 
 on:
   push:
@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   build-release-binaries:
-    name: Build Native Desktop (${{ matrix.target }})
+    name: Build Release Binaries (${{ matrix.target }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -24,20 +24,20 @@ jobs:
         include:
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
-            artifact_name: traces-sm-desktop-linux-x86_64
-            binary_path: desktop/target/release/traces-sm-desktop
+            cli_artifact: traces-sm-linux-x86_64
+            desktop_artifact: traces-sm-desktop-linux-x86_64
           - os: windows-latest
             target: x86_64-pc-windows-msvc
-            artifact_name: traces-sm-desktop-windows-x86_64.exe
-            binary_path: desktop/target/release/traces-sm-desktop.exe
+            cli_artifact: traces-sm-windows-x86_64.exe
+            desktop_artifact: traces-sm-desktop-windows-x86_64.exe
           - os: macos-latest
             target: aarch64-apple-darwin
-            artifact_name: traces-sm-desktop-macos-aarch64
-            binary_path: desktop/target/release/traces-sm-desktop
+            cli_artifact: traces-sm-macos-aarch64
+            desktop_artifact: traces-sm-desktop-macos-aarch64
           - os: macos-13
             target: x86_64-apple-darwin
-            artifact_name: traces-sm-desktop-macos-x86_64
-            binary_path: desktop/target/release/traces-sm-desktop
+            cli_artifact: traces-sm-macos-x86_64
+            desktop_artifact: traces-sm-desktop-macos-x86_64
 
     steps:
       - name: Checkout Repository
@@ -57,29 +57,30 @@ jobs:
       - name: Cache Cargo Dependencies
         uses: Swatinem/rust-cache@v2
 
-      - name: Build Release Desktop Application
+      - name: Build Release Binaries (CLI & Desktop)
         run: |
-          cd desktop
-          cargo build --release --target ${{ matrix.target }}
+          cargo build --release --target ${{ matrix.target }} -p traces-sm -p traces-sm-desktop
 
-      - name: Prepare Binary Artifact Name
+      - name: Prepare Binary Artifacts
         shell: bash
         run: |
           mkdir -p release_assets
           if [ "${{ runner.os }}" = "Windows" ]; then
-            cp desktop/target/${{ matrix.target }}/release/traces-sm-desktop.exe release_assets/${{ matrix.artifact_name }}
+            cp target/${{ matrix.target }}/release/traces-sm.exe release_assets/${{ matrix.cli_artifact }}
+            cp target/${{ matrix.target }}/release/traces-sm-desktop.exe release_assets/${{ matrix.desktop_artifact }}
           else
-            cp desktop/target/${{ matrix.target }}/release/traces-sm-desktop release_assets/${{ matrix.artifact_name }}
+            cp target/${{ matrix.target }}/release/traces-sm release_assets/${{ matrix.cli_artifact }}
+            cp target/${{ matrix.target }}/release/traces-sm-desktop release_assets/${{ matrix.desktop_artifact }}
           fi
 
-      - name: Upload Binary Asset
+      - name: Upload Binary Assets
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.artifact_name }}
-          path: release_assets/${{ matrix.artifact_name }}
+          name: release-${{ matrix.target }}
+          path: release_assets/*
 
   create-github-release:
-    name: Create GitHub Release
+    name: Create & Publish GitHub Release
     needs: build-release-binaries
     runs-on: ubuntu-latest
     steps:
@@ -89,13 +90,16 @@ jobs:
       - name: Download All Release Artifacts
         uses: actions/download-artifact@v4
         with:
-          path: release_assets/
+          path: downloaded_assets/
 
-      - name: Consolidate Release Binaries
+      - name: Consolidate Binaries and Generate Checksums
         run: |
           mkdir -p release_dist
-          find release_assets/ -type f -exec cp {} release_dist/ \;
-          ls -la release_dist/
+          find downloaded_assets/ -type f -exec cp {} release_dist/ \;
+          cd release_dist
+          sha256sum * > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+          ls -la
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2

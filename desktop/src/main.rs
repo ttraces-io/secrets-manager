@@ -203,21 +203,19 @@ impl eframe::App for TracesSmApp {
                 ui.separator();
                 ui.horizontal(|ui| {
                     ui.add(egui::TextEdit::singleline(&mut self.ai_input).hint_text("Ask about keys, policy..."));
-                    if ui.button("Send").clicked() {
-                        if !self.ai_input.trim().is_empty() {
-                            let input_copy = self.ai_input.clone();
-                            self.ai_messages.push(("user".to_string(), input_copy.clone()));
+                    if ui.button("Send").clicked() && !self.ai_input.trim().is_empty() {
+                        let input_copy = self.ai_input.clone();
+                        self.ai_messages.push(("user".to_string(), input_copy.clone()));
 
-                            let reply = if input_copy.contains("k-104") {
-                                "Key k-104 (RSA-2048) was deactivated because its cryptoperiod volume limit reached 4.2 GB. It is restricted to historical decryption."
-                            } else if !self.anthropic_api_key.is_empty() {
-                                "Connected to Anthropic API (Claude 3.5 Sonnet). Enclave telemetry: HW_ACTIVE, 6/6 invariants enforcing."
-                            } else {
-                                "Traces AI: Enclave telemetry healthy. Pass your Anthropic API Key above to activate live Claude intelligence."
-                            };
-                            self.ai_messages.push(("assistant".to_string(), reply.to_string()));
-                            self.ai_input.clear();
-                        }
+                        let reply = if input_copy.contains("k-104") {
+                            "Key k-104 (RSA-2048) was deactivated because its cryptoperiod volume limit reached 4.2 GB. It is restricted to historical decryption."
+                        } else if !self.anthropic_api_key.is_empty() {
+                            "Connected to Anthropic API (Claude 3.5 Sonnet). Enclave telemetry: HW_ACTIVE, 6/6 invariants enforcing."
+                        } else {
+                            "Traces AI: Enclave telemetry healthy. Pass your Anthropic API Key above to activate live Claude intelligence."
+                        };
+                        self.ai_messages.push(("assistant".to_string(), reply.to_string()));
+                        self.ai_input.clear();
                     }
                 });
             });

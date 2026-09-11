@@ -6,9 +6,11 @@ fn main() {
     println!("=== traces-sm Key Lifecycle Example ===");
 
     let mut state = KeyLifecycleState::PreOperational;
-    let mut usage = KeyUsage::default();
-    usage.sign = true;
-    usage.verify = true;
+    let usage = KeyUsage {
+        sign: true,
+        verify: true,
+        ..Default::default()
+    };
 
     println!("Initial State: {:?}", state);
     println!("KeyUsage Sign: {}, Verify: {}", usage.sign, usage.verify);

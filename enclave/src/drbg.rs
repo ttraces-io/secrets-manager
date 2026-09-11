@@ -57,6 +57,12 @@ pub struct HmacDrbg {
     apt_base_sample: u8,
 }
 
+impl Default for HmacDrbg {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl HmacDrbg {
     /// Instantiates and seeds a new HMAC-DRBG using 256 bits of hardware CSPRNG entropy.
     ///
@@ -65,7 +71,7 @@ impl HmacDrbg {
     /// - Performs an initial HMAC update with 32 bytes of secure hardware entropy.
     pub fn new() -> Self {
         let entropy = Self::get_entropy(32);
-        let key = hmac::Key::new(hmac::HMAC_SHA256, &vec![0u8; 32]);
+        let key = hmac::Key::new(hmac::HMAC_SHA256, &[0u8; 32]);
         let v = vec![1u8; 32];
         let mut drbg = Self {
             key,

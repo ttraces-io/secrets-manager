@@ -5,6 +5,7 @@ members = [
     "gui",
     "cli",
     "desktop",
+    "devtest",
 ]
 exclude = [
     "fuzz",

@@ -197,7 +197,7 @@ impl Store {
                 records.push(record);
             }
         }
-        records.sort_by(|a, b| a.created_at.cmp(&b.created_at));
+        records.sort_by_key(|a| a.created_at);
         Ok(records)
     }
 

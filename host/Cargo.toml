@@ -8,6 +8,7 @@ axum = "0.7"
 tokio = { version = "1", features = ["full"] }
 tower-http = { version = "0.5", features = ["cors", "fs", "trace"] }
 rusqlite = { version = "0.31", features = ["bundled"] }
+libsqlite3-sys = { version = "0.28", features = ["bundled"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 reqwest = { version = "0.12", features = ["json"] }
