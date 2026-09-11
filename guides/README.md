@@ -11,9 +11,8 @@ Welcome to the **`traces-sm`** documentation guides. `traces-sm` is a 100% Rust-
 
 `traces-sm` delivers hardware-isolated cryptographic operations and key lifecycle management directly inside Intel SGX Enclave Page Cache (EPC) memory. The untrusted host OS, hypervisor, and co-located processes cannot inspect or tamper with plaintext keys, random number generator states, or threshold shares.
 
-{% hint style="info" %}
-`traces-sm` implements full compliance with **NIST SP 800-57 / SP 800-130 / FIPS 140-3** lifecycle guidelines, featuring Post-Quantum Cryptography, $M$-of-$N$ Threshold DKG, and Mandatory Security Policies.
-{% endhint %}
+> [!NOTE]
+> `traces-sm` implements full compliance with **NIST SP 800-57 / SP 800-130 / FIPS 140-3** lifecycle guidelines, featuring Post-Quantum Cryptography, $M$-of-$N$ Threshold DKG, and Mandatory Security Policies.
 
 ## Next Steps
 

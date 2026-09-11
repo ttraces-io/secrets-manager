@@ -1,0 +1,24 @@
+title: "traces-sm"
+description: "Rust-native SGX Secrets & Key Management Framework"
+url: "https://ttraces-io.github.io"
+baseurl: "/secrets-manager"
+
+exclude:
+  - .agents/
+  - guides/
+  - specifications/
+  - api-reference/
+  - knowledge-base/
+  - devtest/
+  - cli/
+  - desktop/
+  - enclave/
+  - host/
+  - gui/
+  - target/
+  - wiki/
+  - scripts/
+  - Cargo.toml
+  - Cargo.lock
+  - Gemfile
+  - Gemfile.lock
