@@ -40,7 +40,7 @@ jobs:
             cli_debug_artifact: traces-sm-macos-aarch64-debug
             desktop_artifact: traces-sm-desktop-macos-aarch64
             desktop_debug_artifact: traces-sm-desktop-macos-aarch64-debug
-          - os: macos-13
+          - os: macos-latest
             target: x86_64-apple-darwin
             cli_artifact: traces-sm-macos-x86_64
             cli_debug_artifact: traces-sm-macos-x86_64-debug
