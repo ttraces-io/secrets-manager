@@ -44,7 +44,9 @@ pub fn run_suite() -> Result<()> {
         ("sec-101", "purpose:devtest:host_db", 1700000000i64),
     )?;
 
-    let count: i64 = conn.query_row("SELECT COUNT(*) FROM secret_metadata;", [], |row| row.get(0))?;
+    let count: i64 = conn.query_row("SELECT COUNT(*) FROM secret_metadata;", [], |row| {
+        row.get(0)
+    })?;
     if count != 1 {
         bail!("Expected 1 record in secret_metadata, found {}", count);
     }
@@ -56,10 +58,16 @@ pub fn run_suite() -> Result<()> {
     for i in 0..5 {
         let conn_clone = Arc::clone(&conn_arc);
         let handle = thread::spawn(move || -> Result<()> {
-            let conn = conn_clone.lock().map_err(|_| anyhow::anyhow!("Mutex lock poisoned"))?;
+            let conn = conn_clone
+                .lock()
+                .map_err(|_| anyhow::anyhow!("Mutex lock poisoned"))?;
             conn.execute(
                 "INSERT INTO secret_metadata (id, purpose, created_at) VALUES (?1, ?2, ?3);",
-                (format!("sec-concurrent-{i}"), "purpose:concurrent", 1700000000i64 + i),
+                (
+                    format!("sec-concurrent-{i}"),
+                    "purpose:concurrent",
+                    1700000000i64 + i,
+                ),
             )?;
             Ok(())
         });
@@ -71,9 +79,15 @@ pub fn run_suite() -> Result<()> {
     }
 
     let final_conn = conn_arc.lock().map_err(|_| anyhow::anyhow!("Lock error"))?;
-    let total_records: i64 = final_conn.query_row("SELECT COUNT(*) FROM secret_metadata;", [], |row| row.get(0))?;
+    let total_records: i64 =
+        final_conn.query_row("SELECT COUNT(*) FROM secret_metadata;", [], |row| {
+            row.get(0)
+        })?;
     if total_records != 6 {
-        bail!("Expected 6 total records after concurrent inserts, found {}", total_records);
+        bail!(
+            "Expected 6 total records after concurrent inserts, found {}",
+            total_records
+        );
     }
 
     Ok(())

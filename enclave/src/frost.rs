@@ -133,7 +133,6 @@ pub fn round1_commit(key_package_json: &str) -> Result<FrostRound1Output, Enclav
     let mut rng = thread_rng();
     let (nonces, commitments) = frost::round1::commit(key_package.signing_share(), &mut rng);
 
-
     let nonces_json = serde_json::to_string(&nonces).map_err(|e| {
         EnclaveError::DkgInvalidInput(format!("SigningNonces serialize error: {}", e))
     })?;

@@ -17,8 +17,7 @@ use traces_sm_enclave::store::Store;
 pub async fn run_suite() -> Result<()> {
     // 1. Setup Node A
     let store_a = TestStoreDir::new("p2p-node-a");
-    let provider_a: Arc<dyn SealingKeyProvider> =
-        Arc::new(SimSealingProvider::new(store_a.path()));
+    let provider_a: Arc<dyn SealingKeyProvider> = Arc::new(SimSealingProvider::new(store_a.path()));
     let store_instance_a = Arc::new(Store::new(store_a.path()));
     let token_service_a = Arc::new(
         EnclaveTokenService::new(store_a.path(), provider_a.as_ref())
@@ -52,8 +51,7 @@ pub async fn run_suite() -> Result<()> {
 
     // 2. Setup Node B
     let store_b = TestStoreDir::new("p2p-node-b");
-    let provider_b: Arc<dyn SealingKeyProvider> =
-        Arc::new(SimSealingProvider::new(store_b.path()));
+    let provider_b: Arc<dyn SealingKeyProvider> = Arc::new(SimSealingProvider::new(store_b.path()));
     let store_instance_b = Arc::new(Store::new(store_b.path()));
     let token_service_b = Arc::new(
         EnclaveTokenService::new(store_b.path(), provider_b.as_ref())
@@ -94,7 +92,11 @@ pub async fn run_suite() -> Result<()> {
     let res_b = client.get(format!("{}/health", base_url_b)).send().await?;
 
     if !res_a.status().is_success() || !res_b.status().is_success() {
-        bail!("P2P Node health probes failed. Node A: {}, Node B: {}", res_a.status(), res_b.status());
+        bail!(
+            "P2P Node health probes failed. Node A: {}, Node B: {}",
+            res_a.status(),
+            res_b.status()
+        );
     }
 
     // 4. Run 25 P2P Secret & DKG Share Exchange Matrix Tests
@@ -105,7 +107,11 @@ pub async fn run_suite() -> Result<()> {
         for share in &shares {
             let vss_valid = verify_vss_commitment(share, &vss_commitment);
             if !vss_valid {
-                bail!("VSS proof verification failed for P2P share transfer iteration {} share x={}", i, share.x);
+                bail!(
+                    "VSS proof verification failed for P2P share transfer iteration {} share x={}",
+                    i,
+                    share.x
+                );
             }
         }
     }

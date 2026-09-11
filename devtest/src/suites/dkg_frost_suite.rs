@@ -16,7 +16,11 @@ pub fn run_suite() -> Result<()> {
 
     let shares = split_secret_bytes(secret_master_key, threshold, total_shares);
     if shares.len() != total_shares {
-        bail!("Expected {} Shamir shares, got {}", total_shares, shares.len());
+        bail!(
+            "Expected {} Shamir shares, got {}",
+            total_shares,
+            shares.len()
+        );
     }
 
     // Reconstruct with exact threshold (shares 0, 2, 4)
@@ -50,10 +54,10 @@ pub fn run_suite() -> Result<()> {
     let (id2, pkg2) = iter.next().unwrap();
 
     // Round 1: Commitments & Nonces
-    let r1_p1 = round1_commit(&pkg1)
-        .map_err(|e| anyhow::anyhow!("round1_commit p1 failed: {:?}", e))?;
-    let r1_p2 = round1_commit(&pkg2)
-        .map_err(|e| anyhow::anyhow!("round1_commit p2 failed: {:?}", e))?;
+    let r1_p1 =
+        round1_commit(&pkg1).map_err(|e| anyhow::anyhow!("round1_commit p1 failed: {:?}", e))?;
+    let r1_p2 =
+        round1_commit(&pkg2).map_err(|e| anyhow::anyhow!("round1_commit p2 failed: {:?}", e))?;
 
     let mut commitments_map = BTreeMap::new();
     commitments_map.insert(id1.clone(), r1_p1.commitments_json);

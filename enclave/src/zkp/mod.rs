@@ -13,4 +13,3 @@
 pub mod bulletproof;
 pub mod pedersen;
 pub mod schnorr;
-

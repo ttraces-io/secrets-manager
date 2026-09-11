@@ -21,8 +21,13 @@ pub fn run_suite() -> Result<()> {
         let purpose = format!("purpose:secret:{}", secret_name);
 
         // 1. Desktop GUI Component writes sealed secret to shared store
-        let sealed_blob = encrypt_secret(secret_val.as_bytes(), &purpose, &provider)
-            .map_err(|e| anyhow::anyhow!("encrypt_secret failed in interop desktop simulation: {:?}", e))?;
+        let sealed_blob =
+            encrypt_secret(secret_val.as_bytes(), &purpose, &provider).map_err(|e| {
+                anyhow::anyhow!(
+                    "encrypt_secret failed in interop desktop simulation: {:?}",
+                    e
+                )
+            })?;
 
         let now = chrono::Utc::now();
         let record = SecretRecord {
@@ -41,17 +46,21 @@ pub fn run_suite() -> Result<()> {
             zkp_commitment: None,
         };
 
-        store
-            .save(&record, &sealed_blob)
-            .map_err(|e| anyhow::anyhow!("store.save failed in interop desktop simulation: {:?}", e))?;
+        store.save(&record, &sealed_blob).map_err(|e| {
+            anyhow::anyhow!("store.save failed in interop desktop simulation: {:?}", e)
+        })?;
 
         // 2. CLI Command routine loads and verifies the secret
-        let (loaded_record, loaded_blob) = store
-            .load(&record.id)
-            .map_err(|e| anyhow::anyhow!("store.load failed in CLI interop verification: {:?}", e))?;
+        let (loaded_record, loaded_blob) = store.load(&record.id).map_err(|e| {
+            anyhow::anyhow!("store.load failed in CLI interop verification: {:?}", e)
+        })?;
 
         if loaded_record.name != secret_name {
-            bail!("CLI loaded secret name mismatch: expected {}, got {}", secret_name, loaded_record.name);
+            bail!(
+                "CLI loaded secret name mismatch: expected {}, got {}",
+                secret_name,
+                loaded_record.name
+            );
         }
         if loaded_blob != sealed_blob {
             bail!("CLI loaded sealed blob mismatch for secret {}", secret_name);

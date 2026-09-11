@@ -34,18 +34,33 @@ pub fn run_suite() -> Result<()> {
     let ed_pair = generate_key_pair(KeyAlgorithm::Ed25519, &provider)
         .map_err(|e| anyhow::anyhow!("Ed25519 keygen failed: {:?}", e))?;
     let message = b"Confidential enclave attestation message";
-    let ed_sig = sign(KeyAlgorithm::Ed25519, &ed_pair.sealed_private_key, message, &provider)
-        .map_err(|e| anyhow::anyhow!("Ed25519 sign failed: {:?}", e))?;
-    let ed_valid = verify_signature(KeyAlgorithm::Ed25519, &ed_pair.public_key_pem, message, &ed_sig)
-        .map_err(|e| anyhow::anyhow!("Ed25519 verify failed: {:?}", e))?;
+    let ed_sig = sign(
+        KeyAlgorithm::Ed25519,
+        &ed_pair.sealed_private_key,
+        message,
+        &provider,
+    )
+    .map_err(|e| anyhow::anyhow!("Ed25519 sign failed: {:?}", e))?;
+    let ed_valid = verify_signature(
+        KeyAlgorithm::Ed25519,
+        &ed_pair.public_key_pem,
+        message,
+        &ed_sig,
+    )
+    .map_err(|e| anyhow::anyhow!("Ed25519 verify failed: {:?}", e))?;
     if !ed_valid {
         bail!("Ed25519 signature verification returned false for valid signature");
     }
 
     // Ed25519 Tampered Message Negative Test
     let tampered_message = b"Tampered unauthentic message";
-    let tampered_valid = verify_signature(KeyAlgorithm::Ed25519, &ed_pair.public_key_pem, tampered_message, &ed_sig)
-        .unwrap_or(false);
+    let tampered_valid = verify_signature(
+        KeyAlgorithm::Ed25519,
+        &ed_pair.public_key_pem,
+        tampered_message,
+        &ed_sig,
+    )
+    .unwrap_or(false);
     if tampered_valid {
         bail!("Ed25519 verification unexpectedly accepted tampered message");
     }
@@ -53,10 +68,20 @@ pub fn run_suite() -> Result<()> {
     // 4. ECDSA P-256 Keygen, Sign, and Verify
     let ecdsa_pair = generate_key_pair(KeyAlgorithm::EcdsaP256, &provider)
         .map_err(|e| anyhow::anyhow!("ECDSA P-256 keygen failed: {:?}", e))?;
-    let ecdsa_sig = sign(KeyAlgorithm::EcdsaP256, &ecdsa_pair.sealed_private_key, message, &provider)
-        .map_err(|e| anyhow::anyhow!("ECDSA P-256 sign failed: {:?}", e))?;
-    let ecdsa_valid = verify_signature(KeyAlgorithm::EcdsaP256, &ecdsa_pair.public_key_pem, message, &ecdsa_sig)
-        .map_err(|e| anyhow::anyhow!("ECDSA P-256 verify failed: {:?}", e))?;
+    let ecdsa_sig = sign(
+        KeyAlgorithm::EcdsaP256,
+        &ecdsa_pair.sealed_private_key,
+        message,
+        &provider,
+    )
+    .map_err(|e| anyhow::anyhow!("ECDSA P-256 sign failed: {:?}", e))?;
+    let ecdsa_valid = verify_signature(
+        KeyAlgorithm::EcdsaP256,
+        &ecdsa_pair.public_key_pem,
+        message,
+        &ecdsa_sig,
+    )
+    .map_err(|e| anyhow::anyhow!("ECDSA P-256 verify failed: {:?}", e))?;
     if !ecdsa_valid {
         bail!("ECDSA P-256 signature verification returned false for valid signature");
     }
@@ -72,16 +97,30 @@ pub fn run_suite() -> Result<()> {
         bail!("RSA-OAEP decrypted plaintext mismatch");
     }
 
-    let rsa_sig = sign(KeyAlgorithm::Rsa2048, &rsa_pair.sealed_private_key, message, &provider)
-        .map_err(|e| anyhow::anyhow!("RSA-2048 sign failed: {:?}", e))?;
-    let rsa_valid = verify_signature(KeyAlgorithm::Rsa2048, &rsa_pair.public_key_pem, message, &rsa_sig)
-        .map_err(|e| anyhow::anyhow!("RSA-2048 verify failed: {:?}", e))?;
+    let rsa_sig = sign(
+        KeyAlgorithm::Rsa2048,
+        &rsa_pair.sealed_private_key,
+        message,
+        &provider,
+    )
+    .map_err(|e| anyhow::anyhow!("RSA-2048 sign failed: {:?}", e))?;
+    let rsa_valid = verify_signature(
+        KeyAlgorithm::Rsa2048,
+        &rsa_pair.public_key_pem,
+        message,
+        &rsa_sig,
+    )
+    .map_err(|e| anyhow::anyhow!("RSA-2048 verify failed: {:?}", e))?;
     if !rsa_valid {
         bail!("RSA-2048 signature verification failed for valid signature");
     }
 
     // 6. Symmetric Keygen (AES-128, AES-256, ChaCha20-Poly1305)
-    for algo in [KeyAlgorithm::Aes128Gcm, KeyAlgorithm::Aes256Gcm, KeyAlgorithm::ChaCha20Poly1305] {
+    for algo in [
+        KeyAlgorithm::Aes128Gcm,
+        KeyAlgorithm::Aes256Gcm,
+        KeyAlgorithm::ChaCha20Poly1305,
+    ] {
         let sym_pair = generate_key_pair(algo.clone(), &provider)
             .map_err(|e| anyhow::anyhow!("Symmetric keygen {:?} failed: {:?}", algo, e))?;
         if sym_pair.sealed_private_key.is_empty() {
@@ -94,7 +133,10 @@ pub fn run_suite() -> Result<()> {
         Err(traces_sm_enclave::error::EnclaveError::NotImplemented(_)) => {
             // Expected stub status
         }
-        other => bail!("Expected NotImplemented for ML-KEM-768 stub, got: {:?}", other),
+        other => bail!(
+            "Expected NotImplemented for ML-KEM-768 stub, got: {:?}",
+            other
+        ),
     }
 
     Ok(())

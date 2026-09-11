@@ -69,4 +69,3 @@ pub fn start_server(state: Arc<EnclaveState>) {
         }
     }
 }
-

@@ -13,4 +13,3 @@ pub fn router() -> Router {
         .route("/setup", post(|| async { "Setup DKG" }))
         .route("/nodes", get(|| async { "Get nodes" }))
 }
-

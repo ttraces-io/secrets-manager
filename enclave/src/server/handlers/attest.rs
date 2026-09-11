@@ -80,4 +80,3 @@ fn get_measurements(mode: &str) -> AttestationMeasurements {
         sgx_mode: Some(mode.to_string()),
     }
 }
-

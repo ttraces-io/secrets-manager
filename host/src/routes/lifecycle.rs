@@ -10,4 +10,3 @@ pub fn router() -> Router {
         .route("/transition", post(|| async { "Transition state" }))
         .route("/shred", post(|| async { "Shred state" }))
 }
-

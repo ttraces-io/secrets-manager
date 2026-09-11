@@ -13,11 +13,7 @@ async fn test_full_system_verification_suite() {
                 eprintln!("Suite '{}' failed: {}", suite.name, err);
             }
         }
-        assert!(
-            suite.passed,
-            "DevTest Suite '{}' failed!",
-            suite.name
-        );
+        assert!(suite.passed, "DevTest Suite '{}' failed!", suite.name);
     }
 
     assert_eq!(

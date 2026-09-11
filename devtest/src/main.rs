@@ -18,17 +18,54 @@ async fn main() {
     let runner = DevTestRunner::new();
 
     if !is_json {
-        println!("{}", "╔════════════════════════════════════════════════════════════════════════════════╗".bright_cyan());
-        println!("{}", "║              🔒 traces-sm Enterprise Testing & Verification Module             ║".bright_cyan().bold());
-        println!("{}", "╚════════════════════════════════════════════════════════════════════════════════╝".bright_cyan());
+        println!(
+            "{}",
+            "╔════════════════════════════════════════════════════════════════════════════════╗"
+                .bright_cyan()
+        );
+        println!(
+            "{}",
+            "║              🔒 traces-sm Enterprise Testing & Verification Module             ║"
+                .bright_cyan()
+                .bold()
+        );
+        println!(
+            "{}",
+            "╚════════════════════════════════════════════════════════════════════════════════╝"
+                .bright_cyan()
+        );
         println!();
-        println!("  {} {}", "Operating System:".bright_yellow().bold(), runner.env_info.os);
-        println!("  {} {}", "Architecture:    ".bright_yellow().bold(), runner.env_info.arch);
-        println!("  {} {}", "SGX Mode:        ".bright_yellow().bold(), runner.env_info.sgx_mode);
-        println!("  {} {}", "Simulation Mode: ".bright_yellow().bold(), runner.env_info.is_simulation);
-        println!("  {} {}", "Temp Directory:  ".bright_yellow().bold(), runner.env_info.temp_dir);
+        println!(
+            "  {} {}",
+            "Operating System:".bright_yellow().bold(),
+            runner.env_info.os
+        );
+        println!(
+            "  {} {}",
+            "Architecture:    ".bright_yellow().bold(),
+            runner.env_info.arch
+        );
+        println!(
+            "  {} {}",
+            "SGX Mode:        ".bright_yellow().bold(),
+            runner.env_info.sgx_mode
+        );
+        println!(
+            "  {} {}",
+            "Simulation Mode: ".bright_yellow().bold(),
+            runner.env_info.is_simulation
+        );
+        println!(
+            "  {} {}",
+            "Temp Directory:  ".bright_yellow().bold(),
+            runner.env_info.temp_dir
+        );
         println!();
-        println!("{}", "── Executing Comprehensive Subsystem Test Suites ──────────────────────────────".dimmed());
+        println!(
+            "{}",
+            "── Executing Comprehensive Subsystem Test Suites ──────────────────────────────"
+                .dimmed()
+        );
     }
 
     let report = runner.run_all().await;
@@ -67,7 +104,11 @@ async fn main() {
         }
 
         println!();
-        println!("{}", "════════════════════════════════════════════════════════════════════════════════".bright_cyan());
+        println!(
+            "{}",
+            "════════════════════════════════════════════════════════════════════════════════"
+                .bright_cyan()
+        );
         if report.failed_suites == 0 {
             println!(
                 "  {} All {} test suites passed successfully in {} ms!",
@@ -84,7 +125,11 @@ async fn main() {
                 report.total_duration_ms
             );
         }
-        println!("{}", "════════════════════════════════════════════════════════════════════════════════".bright_cyan());
+        println!(
+            "{}",
+            "════════════════════════════════════════════════════════════════════════════════"
+                .bright_cyan()
+        );
         println!();
     }
 
@@ -93,7 +138,11 @@ async fn main() {
         if let Err(e) = fs::write(&path, markdown) {
             eprintln!("Failed to write report to {}: {}", path, e);
         } else if !is_json {
-            println!("  {} Audit report generated at: {}", "📄 Report:".bright_cyan().bold(), path);
+            println!(
+                "  {} Audit report generated at: {}",
+                "📄 Report:".bright_cyan().bold(),
+                path
+            );
         }
     }
 

@@ -259,4 +259,3 @@ fn http_response(status: u16, body: &impl serde::Serialize) -> String {
         json
     )
 }
-

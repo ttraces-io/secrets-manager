@@ -208,4 +208,3 @@ pub fn http_status(e: &EnclaveError) -> u16 {
         _ => 500,
     }
 }
-

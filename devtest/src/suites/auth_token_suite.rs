@@ -17,7 +17,11 @@ pub fn run_suite() -> Result<()> {
 
     // 2. Standard Token Issuance and Validation
     let sub = "operator@traces-sm.internal";
-    let scopes = vec!["admin".to_string(), "secrets:read".to_string(), "keys:manage".to_string()];
+    let scopes = vec![
+        "admin".to_string(),
+        "secrets:read".to_string(),
+        "keys:manage".to_string(),
+    ];
     let ttl_secs = 3600;
 
     let (jti, token) = token_service
@@ -33,7 +37,11 @@ pub fn run_suite() -> Result<()> {
         .map_err(|e| anyhow::anyhow!("verify_token failed for valid token: {:?}", e))?;
 
     if claims.sub != sub {
-        bail!("Claims subject mismatch: expected {}, got {}", sub, claims.sub);
+        bail!(
+            "Claims subject mismatch: expected {}, got {}",
+            sub,
+            claims.sub
+        );
     }
     if claims.scopes != scopes {
         bail!("Claims scopes mismatch");
@@ -45,7 +53,10 @@ pub fn run_suite() -> Result<()> {
         Err(EnclaveError::TokenRevoked) => {
             // Expected
         }
-        other => bail!("Expected TokenRevoked error after revoking token, got: {:?}", other),
+        other => bail!(
+            "Expected TokenRevoked error after revoking token, got: {:?}",
+            other
+        ),
     }
 
     // 4. Negative Test: Tampered Signature

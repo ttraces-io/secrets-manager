@@ -112,7 +112,6 @@ pub fn generate_key_pair(
     }
 }
 
-
 fn generate_frost_ed25519(
     provider: &dyn SealingKeyProvider,
 ) -> Result<GeneratedKeyPair, EnclaveError> {

@@ -56,4 +56,3 @@ pub fn revoke(
     state.token_service.revoke_token(jti);
     Ok(serde_json::json!({ "token_id": jti, "revoked": true }))
 }
-

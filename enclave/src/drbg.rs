@@ -25,7 +25,6 @@
 use ring::hmac;
 use ring::rand::SecureRandom;
 
-
 /// Real-time health metrics of the in-enclave entropy and DRBG subsystems.
 #[derive(Debug, Clone, Copy)]
 pub struct EntropyHealthStatus {
@@ -223,4 +222,3 @@ pub fn init_drbg_health_check() -> EntropyHealthStatus {
     let mut dummy = [0u8; 64];
     drbg.generate(&mut dummy)
 }
-

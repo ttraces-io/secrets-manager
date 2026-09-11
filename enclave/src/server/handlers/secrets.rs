@@ -184,4 +184,3 @@ pub fn delete(
     state.store.soft_delete(&uuid)?;
     Ok(serde_json::json!({ "id": uuid, "deleted": true }))
 }
-

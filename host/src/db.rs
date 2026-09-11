@@ -91,4 +91,3 @@ pub fn init_db() -> Result<()> {
 
     Ok(())
 }
-

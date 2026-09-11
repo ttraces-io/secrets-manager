@@ -13,4 +13,3 @@ pub fn router() -> Router {
         .route("/", get(|| async { "List secrets" }))
         .route("/", post(|| async { "Create secret" }))
 }
-

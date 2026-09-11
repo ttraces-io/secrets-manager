@@ -43,4 +43,3 @@ pub fn handle_entropy_status() -> Result<ApiResponse<EntropyStatusResponse>, Enc
     };
     Ok(ApiResponse::ok(status))
 }
-

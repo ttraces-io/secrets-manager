@@ -7,4 +7,3 @@
 //!   ($D(E(m)^k \bmod n^2) = (k \cdot m) \bmod n$).
 
 pub mod paillier;
-

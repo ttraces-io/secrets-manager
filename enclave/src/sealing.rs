@@ -294,7 +294,6 @@ pub fn unseal(
 pub use seal as seal_data;
 pub use unseal as unseal_data;
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

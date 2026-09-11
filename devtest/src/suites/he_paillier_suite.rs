@@ -9,8 +9,8 @@ use traces_sm_enclave::he::paillier::{
 /// Executes Paillier homomorphic encryption, addition, and scalar multiplication tests.
 pub fn run_suite() -> Result<()> {
     // 1. Generate Paillier 512-bit Keypair for fast deterministic test execution
-    let keypair = generate_keypair(512)
-        .map_err(|e| anyhow::anyhow!("Paillier keygen failed: {:?}", e))?;
+    let keypair =
+        generate_keypair(512).map_err(|e| anyhow::anyhow!("Paillier keygen failed: {:?}", e))?;
 
     let m1 = BigUint::from(42u32);
     let m2 = BigUint::from(58u32);

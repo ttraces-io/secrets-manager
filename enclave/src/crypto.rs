@@ -193,4 +193,3 @@ mod tests {
         assert!(decrypt_secret(&blob, "purpose:B", &provider).is_err());
     }
 }
-

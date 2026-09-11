@@ -7,22 +7,38 @@ use traces_sm_enclave::nist::{sp800_108_kdf, KeyLifecycleState};
 pub fn run_suite() -> Result<()> {
     // 1. NIST SP 800-57 Permission Matrix Checks
     let pre_op = KeyLifecycleState::PreOperational;
-    if pre_op.can_encrypt() || pre_op.can_decrypt_historical() || pre_op.can_sign() || pre_op.can_verify() {
+    if pre_op.can_encrypt()
+        || pre_op.can_decrypt_historical()
+        || pre_op.can_sign()
+        || pre_op.can_verify()
+    {
         bail!("PreOperational key should have zero operational permissions");
     }
 
     let operational = KeyLifecycleState::Operational;
-    if !operational.can_encrypt() || !operational.can_decrypt_historical() || !operational.can_sign() || !operational.can_verify() {
+    if !operational.can_encrypt()
+        || !operational.can_decrypt_historical()
+        || !operational.can_sign()
+        || !operational.can_verify()
+    {
         bail!("Operational key must have full encrypt, decrypt, sign, and verify permissions");
     }
 
     let deactivated = KeyLifecycleState::Deactivated;
-    if deactivated.can_encrypt() || !deactivated.can_decrypt_historical() || deactivated.can_sign() || !deactivated.can_verify() {
+    if deactivated.can_encrypt()
+        || !deactivated.can_decrypt_historical()
+        || deactivated.can_sign()
+        || !deactivated.can_verify()
+    {
         bail!("Deactivated key must allow historical decrypt/verify only, with zero new encryption/signing");
     }
 
     let destroyed = KeyLifecycleState::Destroyed;
-    if destroyed.can_encrypt() || destroyed.can_decrypt_historical() || destroyed.can_sign() || destroyed.can_verify() {
+    if destroyed.can_encrypt()
+        || destroyed.can_decrypt_historical()
+        || destroyed.can_sign()
+        || destroyed.can_verify()
+    {
         bail!("Destroyed key must have zero permissions");
     }
 

@@ -18,8 +18,6 @@ use crate::server::EnclaveState;
 use crate::zkp::{bulletproof, pedersen, schnorr};
 use num_bigint::BigUint;
 
-
-
 // ─────────────────────────────────────────────────────────────────────────────
 // Schnorr PoK
 // ─────────────────────────────────────────────────────────────────────────────
@@ -292,4 +290,3 @@ fn load_paillier_pk(
     let n_sq = &n * &n;
     Ok(paillier::PaillierPublicKey { n, g, n_sq })
 }
-

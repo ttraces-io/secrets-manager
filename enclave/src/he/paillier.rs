@@ -85,7 +85,6 @@ pub struct PaillierKeyPair {
     pub private: PaillierPrivateKey,
 }
 
-
 // ─────────────────────────────────────────────────────────────────────────────
 // Serialisable private key (for sealing to disk)
 // ─────────────────────────────────────────────────────────────────────────────

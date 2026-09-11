@@ -166,8 +166,8 @@ fn tc_seal_009_nonce_is_unique_per_seal() {
 #[cfg(unix)]
 #[test]
 fn tc_seal_010_sim_master_key_is_owner_only() {
-    use std::os::unix::fs::PermissionsExt;
     use crate::common::TempStore;
+    use std::os::unix::fs::PermissionsExt;
     use traces_sm_enclave::sealing::{SealingKeyProvider, SimSealingProvider};
 
     let tmp = TempStore::new("simkey");

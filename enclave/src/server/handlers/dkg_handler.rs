@@ -98,4 +98,3 @@ pub fn handle_frost_verify(
     let valid = verify_signature(&body.group_public_key_hex, &body.signature_hex, &msg_bytes)?;
     Ok(serde_json::json!({ "valid": valid }))
 }
-

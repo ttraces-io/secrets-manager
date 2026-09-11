@@ -32,8 +32,8 @@ use curve25519_dalek::scalar::Scalar;
 use curve25519_dalek::traits::Identity;
 use serde::{Deserialize, Serialize};
 
-use crate::error::EnclaveError;
 use crate::drbg::HmacDrbg;
+use crate::error::EnclaveError;
 
 /// Multi-byte participant threshold key share over Galois Field $GF(256)$.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
@@ -183,7 +183,6 @@ pub fn split_secret(secret: u8, threshold: usize, total: usize) -> Vec<SecretSha
         })
         .collect()
 }
-
 
 /// Backward-compatible single-byte secret reconstruction function.
 pub fn reconstruct_secret(shares: &[SecretShare], threshold: usize) -> u8 {

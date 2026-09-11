@@ -270,4 +270,3 @@ fn b64url_decode(s: &str) -> Result<Vec<u8>, EnclaveError> {
         .decode(s)
         .map_err(|_| EnclaveError::Unauthorized)
 }
-

@@ -16,7 +16,10 @@ pub fn run_suite() -> Result<()> {
     let masked_env: HashMap<String, String> = env_map
         .iter()
         .map(|(k, v)| {
-            let is_sensitive = k.contains("SECRET") || k.contains("PASSWORD") || k.contains("KEY") || k.contains("TOKEN");
+            let is_sensitive = k.contains("SECRET")
+                || k.contains("PASSWORD")
+                || k.contains("KEY")
+                || k.contains("TOKEN");
             let val = if is_sensitive {
                 "********".to_string()
             } else {

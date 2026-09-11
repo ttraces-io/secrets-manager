@@ -153,7 +153,6 @@ fn derive_mini_secret(bytes: &[u8]) -> Result<MiniSecretKey, EnclaveError> {
         .map_err(|_| EnclaveError::ZkpProve("cannot create MiniSecretKey from seed".into()))
 }
 
-
 // ─────────────────────────────────────────────────────────────────────────────
 // Tests
 // ─────────────────────────────────────────────────────────────────────────────
