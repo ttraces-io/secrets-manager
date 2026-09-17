@@ -12,7 +12,7 @@
 | **Paid Bug Bounties** | **10** |
 | **Vulnerability Disclosure Programs (VDPs)** | **5** |
 | **Combined Max Bounty Pool** | **$2,850,000.00** |
-| **Last Bot Sync** | `2026-09-16 00:20:04 UTC` |
+| **Last Bot Sync** | `2026-09-17 00:20:00 UTC` |
 
 ---
 
@@ -26,10 +26,10 @@
 | **Google Vulnerability Reward Program** | Direct / Self-Hosted | $150,000 | *.google.com, *.android.com (+2 more) | [View Policy](https://bughunters.google.com/about/rules) | `Cloud` `Mobile` `Web` | 🟢 Active |
 | **Meta Bug Bounty Program** | Direct / Self-Hosted | $130,000 | Facebook, Instagram (+2 more) | [View Policy](https://www.facebook.com/whitehat/info) | `Social` `Mobile` `VR` | 🟢 Active |
 | **GitHub Bug Bounty** | HackerOne | $30,000 | github.com, GitHub Enterprise (+2 more) | [View Policy](https://bounty.github.com/) | `Web` `Developer Tools` `Cloud` | 🟢 Active |
+| **d-you App & German EUDI Wallet Ecosystem (HackerOne)** | HackerOne | $10,000 | *.common_codes.com | [View Policy](https://hackerone.com/common_codes) | `Web` `HackerOne` | 🟢 Active |
 | **Wolt (HackerOne)** | HackerOne | $10,000 | *.wolt.com | [View Policy](https://hackerone.com/wolt) | `Web` `HackerOne` | 🟢 Active |
 | **Agoda Public (HackerOne)** | HackerOne | $10,000 | *.agoda-public.com | [View Policy](https://hackerone.com/agoda-public) | `Web` `HackerOne` | 🟢 Active |
 | **Coupang Taiwan (HackerOne)** | HackerOne | $10,000 | *.coupang_tw.com | [View Policy](https://hackerone.com/coupang_tw) | `Web` `HackerOne` | 🟢 Active |
-| **Anduril Industries (HackerOne)** | HackerOne | $10,000 | *.anduril_industries.com | [View Policy](https://hackerone.com/anduril_industries) | `Web` `HackerOne` | 🟢 Active |
 | **CISA Vulnerability Disclosure Policy** | Direct / Self-Hosted | VDP (Unpaid) | *.cisa.gov, Federal Executive Branch Systems | [View Policy](https://www.cisa.gov/vulnerability-disclosure-policy) | `Government` `VDP` `Infrastructure` | 🟢 Active |
 | **Cloudflare Security Disclosure (security.txt)** | Direct / Self-Hosted | VDP (Unpaid) | *.cloudflare.com | [View Policy](https://www.cloudflare.com/disclosure/) | `Self-Hosted` `RFC 9116` `Web` | 🟢 Active |
 | **Stripe Security Disclosure (security.txt)** | Direct / Self-Hosted | VDP (Unpaid) | *.stripe.com | [View Policy](https://hackerone.com/stripe#overview) | `Self-Hosted` `RFC 9116` `Web` | 🟢 Active |

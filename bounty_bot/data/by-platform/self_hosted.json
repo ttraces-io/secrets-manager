@@ -35,7 +35,7 @@
       "Hardware"
     ],
     "status": "Active",
-    "last_updated": "2026-09-16T00:19:59.345812+00:00"
+    "last_updated": "2026-09-17T00:19:56.439702+00:00"
   },
   {
     "id": "microsoft-msrc",
@@ -72,7 +72,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-09-16T00:19:59.345840+00:00"
+    "last_updated": "2026-09-17T00:19:56.439735+00:00"
   },
   {
     "id": "meta-whitehat",
@@ -107,7 +107,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-09-16T00:19:59.345848+00:00"
+    "last_updated": "2026-09-17T00:19:56.439748+00:00"
   },
   {
     "id": "apple-security-bounty",
@@ -143,7 +143,7 @@
       "Cloud"
     ],
     "status": "Active",
-    "last_updated": "2026-09-16T00:19:59.345855+00:00"
+    "last_updated": "2026-09-17T00:19:56.439759+00:00"
   },
   {
     "id": "cisa-vdp",
@@ -174,7 +174,7 @@
       "Infrastructure"
     ],
     "status": "Active",
-    "last_updated": "2026-09-16T00:19:59.345878+00:00"
+    "last_updated": "2026-09-17T00:19:56.439797+00:00"
   },
   {
     "id": "sectxt-cloudflare-com",
@@ -201,7 +201,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-09-16T00:19:59.950667+00:00"
+    "last_updated": "2026-09-17T00:19:56.924907+00:00"
   },
   {
     "id": "sectxt-stripe-com",
@@ -228,7 +228,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-09-16T00:20:00.864931+00:00"
+    "last_updated": "2026-09-17T00:19:57.659855+00:00"
   },
   {
     "id": "sectxt-airbnb-com",
@@ -255,7 +255,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-09-16T00:20:02.025235+00:00"
+    "last_updated": "2026-09-17T00:19:58.090995+00:00"
   },
   {
     "id": "sectxt-gitlab-com",
@@ -282,6 +282,6 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-09-16T00:20:02.488043+00:00"
+    "last_updated": "2026-09-17T00:19:58.617340+00:00"
   }
 ]
