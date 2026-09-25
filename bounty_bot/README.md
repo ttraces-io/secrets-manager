@@ -8,11 +8,11 @@
 
 | Metric | Value |
 | :--- | :--- |
-| **Total Tracked Programs** | **15** |
-| **Paid Bug Bounties** | **10** |
+| **Total Tracked Programs** | **16** |
+| **Paid Bug Bounties** | **11** |
 | **Vulnerability Disclosure Programs (VDPs)** | **5** |
-| **Combined Max Bounty Pool** | **$2,850,000.00** |
-| **Last Bot Sync** | `2026-09-24 00:20:16 UTC` |
+| **Combined Max Bounty Pool** | **$2,860,000.00** |
+| **Last Bot Sync** | `2026-09-25 00:21:37 UTC` |
 
 ---
 
@@ -30,6 +30,7 @@
 | **Wolt (HackerOne)** | HackerOne | $10,000 | *.wolt.com | [View Policy](https://hackerone.com/wolt) | `Web` `HackerOne` | 🟢 Active |
 | **Agoda Public (HackerOne)** | HackerOne | $10,000 | *.agoda-public.com | [View Policy](https://hackerone.com/agoda-public) | `Web` `HackerOne` | 🟢 Active |
 | **Coupang Taiwan (HackerOne)** | HackerOne | $10,000 | *.coupang_tw.com | [View Policy](https://hackerone.com/coupang_tw) | `Web` `HackerOne` | 🟢 Active |
+| **Live Nation (HackerOne)** | HackerOne | $10,000 | *.live_nation.com | [View Policy](https://hackerone.com/live_nation) | `Web` `HackerOne` | 🟢 Active |
 | **CISA Vulnerability Disclosure Policy** | Direct / Self-Hosted | VDP (Unpaid) | *.cisa.gov, Federal Executive Branch Systems | [View Policy](https://www.cisa.gov/vulnerability-disclosure-policy) | `Government` `VDP` `Infrastructure` | 🟢 Active |
 | **Cloudflare Security Disclosure (security.txt)** | Direct / Self-Hosted | VDP (Unpaid) | *.cloudflare.com | [View Policy](https://www.cloudflare.com/disclosure/) | `Self-Hosted` `RFC 9116` `Web` | 🟢 Active |
 | **Stripe Security Disclosure (security.txt)** | Direct / Self-Hosted | VDP (Unpaid) | *.stripe.com | [View Policy](https://hackerone.com/stripe#overview) | `Self-Hosted` `RFC 9116` `Web` | 🟢 Active |
