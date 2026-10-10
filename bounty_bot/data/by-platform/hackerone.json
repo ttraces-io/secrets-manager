@@ -33,7 +33,7 @@
       "Cloud"
     ],
     "status": "Active",
-    "last_updated": "2026-10-09T00:25:52.691919+00:00"
+    "last_updated": "2026-10-10T00:23:58.672811+00:00"
   },
   {
     "id": "hackerone-omarchy",
@@ -60,7 +60,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-09T00:25:53.002529+00:00"
+    "last_updated": "2026-10-10T00:23:58.972949+00:00"
   },
   {
     "id": "hackerone-common_codes",
@@ -87,7 +87,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-09T00:25:53.002564+00:00"
+    "last_updated": "2026-10-10T00:23:58.972979+00:00"
   },
   {
     "id": "hackerone-wolt",
@@ -114,7 +114,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-09T00:25:53.002573+00:00"
+    "last_updated": "2026-10-10T00:23:58.972988+00:00"
   },
   {
     "id": "hackerone-agoda-public",
@@ -141,7 +141,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-09T00:25:53.002579+00:00"
+    "last_updated": "2026-10-10T00:23:58.972997+00:00"
   },
   {
     "id": "hackerone-coupang_tw",
@@ -168,33 +168,6 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-09T00:25:53.002586+00:00"
-  },
-  {
-    "id": "hackerone-live_nation",
-    "name": "Live Nation (HackerOne)",
-    "organization": "Live Nation",
-    "platform": "HackerOne",
-    "program_type": "Bug Bounty",
-    "url": "https://hackerone.com/live_nation",
-    "policy_url": "https://hackerone.com/live_nation",
-    "max_bounty_usd": 10000.0,
-    "min_bounty_usd": null,
-    "reward_types": [
-      "Cash",
-      "Swag"
-    ],
-    "scope_summary": [
-      "*.live_nation.com"
-    ],
-    "out_of_scope_summary": [],
-    "contact_email": null,
-    "security_txt_url": null,
-    "tags": [
-      "Web",
-      "HackerOne"
-    ],
-    "status": "Active",
-    "last_updated": "2026-10-09T00:25:53.002596+00:00"
+    "last_updated": "2026-10-10T00:23:58.973010+00:00"
   }
 ]
