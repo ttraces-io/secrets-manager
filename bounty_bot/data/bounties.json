@@ -35,7 +35,7 @@
       "Hardware"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.664307+00:00"
+    "last_updated": "2026-10-16T03:57:05.761918+00:00"
   },
   {
     "id": "microsoft-msrc",
@@ -72,7 +72,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.664339+00:00"
+    "last_updated": "2026-10-16T03:57:05.761948+00:00"
   },
   {
     "id": "meta-whitehat",
@@ -107,7 +107,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.664349+00:00"
+    "last_updated": "2026-10-16T03:57:05.761957+00:00"
   },
   {
     "id": "apple-security-bounty",
@@ -143,7 +143,7 @@
       "Cloud"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.664355+00:00"
+    "last_updated": "2026-10-16T03:57:05.761964+00:00"
   },
   {
     "id": "github-bug-bounty",
@@ -179,7 +179,7 @@
       "Cloud"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.664362+00:00"
+    "last_updated": "2026-10-16T03:57:05.761972+00:00"
   },
   {
     "id": "ethereum-immunefi",
@@ -214,7 +214,7 @@
       "Cryptography"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.664368+00:00"
+    "last_updated": "2026-10-16T03:57:05.761981+00:00"
   },
   {
     "id": "cisa-vdp",
@@ -245,7 +245,7 @@
       "Infrastructure"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.664375+00:00"
+    "last_updated": "2026-10-16T03:57:05.761990+00:00"
   },
   {
     "id": "hackerone-omarchy",
@@ -272,7 +272,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.944761+00:00"
+    "last_updated": "2026-10-16T03:57:06.110463+00:00"
   },
   {
     "id": "hackerone-common_codes",
@@ -299,7 +299,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.944792+00:00"
+    "last_updated": "2026-10-16T03:57:06.110494+00:00"
   },
   {
     "id": "hackerone-wolt",
@@ -326,7 +326,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.944801+00:00"
+    "last_updated": "2026-10-16T03:57:06.110501+00:00"
   },
   {
     "id": "hackerone-agoda-public",
@@ -353,7 +353,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.944806+00:00"
+    "last_updated": "2026-10-16T03:57:06.110506+00:00"
   },
   {
     "id": "hackerone-coupang_tw",
@@ -380,7 +380,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:07.944811+00:00"
+    "last_updated": "2026-10-16T03:57:06.110512+00:00"
   },
   {
     "id": "sectxt-cloudflare-com",
@@ -407,7 +407,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:08.192442+00:00"
+    "last_updated": "2026-10-16T03:57:06.393282+00:00"
   },
   {
     "id": "sectxt-stripe-com",
@@ -434,7 +434,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:09.091670+00:00"
+    "last_updated": "2026-10-16T03:57:07.383869+00:00"
   },
   {
     "id": "sectxt-airbnb-com",
@@ -461,7 +461,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:10.096503+00:00"
+    "last_updated": "2026-10-16T03:57:08.227561+00:00"
   },
   {
     "id": "sectxt-gitlab-com",
@@ -488,6 +488,32 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-15T04:00:10.565555+00:00"
+    "last_updated": "2026-10-16T03:57:08.674251+00:00"
+  },
+  {
+    "id": "rss-what",
+    "name": "What ID verification changes mean for public bug bounty programs at Intigriti",
+    "organization": "What",
+    "platform": "Other",
+    "program_type": "Bug Bounty",
+    "url": "https://www.intigriti.com/blog/business-insights/what-id-verification-changes-mean-for-public-bug-bounty-programs-at-intigriti",
+    "policy_url": "https://www.intigriti.com/blog/business-insights/what-id-verification-changes-mean-for-public-bug-bounty-programs-at-intigriti",
+    "max_bounty_usd": null,
+    "min_bounty_usd": null,
+    "reward_types": [
+      "Cash"
+    ],
+    "scope_summary": [
+      "Refer to announcement"
+    ],
+    "out_of_scope_summary": [],
+    "contact_email": null,
+    "security_txt_url": null,
+    "tags": [
+      "RSS Discovered",
+      "Newly Announced"
+    ],
+    "status": "Active",
+    "last_updated": "2026-10-16T03:57:10.545247+00:00"
   }
 ]
