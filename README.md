@@ -15,7 +15,7 @@ It delivers full compliance with **NIST SP 800-57 / SP 800-130 / FIPS 140-3** li
 
 | Total Tracked Programs | Paid Bug Bounties | Unpaid VDPs | Total Reward Pool | Last Bot Sync |
 | :---: | :---: | :---: | :---: | :---: |
-| **17** | **11** | **6** | **$2,860,000.00** | `2026-10-25 04:01:16 UTC` |
+| **17** | **11** | **6** | **$2,860,000.00** | `2026-10-26 04:05:57 UTC` |
 
 ### 🔗 Direct Data Access
 * 📊 **Searchable Bounty Directory**: [`bounty_bot/README.md`](bounty_bot/README.md)
