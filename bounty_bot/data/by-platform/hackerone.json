@@ -33,7 +33,7 @@
       "Cloud"
     ],
     "status": "Active",
-    "last_updated": "2026-10-27T04:25:48.300302+00:00"
+    "last_updated": "2026-10-28T04:56:34.485843+00:00"
   },
   {
     "id": "hackerone-omarchy",
@@ -60,7 +60,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-27T04:25:48.886592+00:00"
+    "last_updated": "2026-10-28T04:56:35.687445+00:00"
   },
   {
     "id": "hackerone-common_codes",
@@ -87,7 +87,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-27T04:25:48.886629+00:00"
+    "last_updated": "2026-10-28T04:56:35.687478+00:00"
   },
   {
     "id": "hackerone-wolt",
@@ -114,7 +114,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-27T04:25:48.886641+00:00"
+    "last_updated": "2026-10-28T04:56:35.687487+00:00"
   },
   {
     "id": "hackerone-agoda-public",
@@ -141,33 +141,6 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-27T04:25:48.886649+00:00"
-  },
-  {
-    "id": "hackerone-coupang_tw",
-    "name": "Coupang Taiwan (HackerOne)",
-    "organization": "Coupang Taiwan",
-    "platform": "HackerOne",
-    "program_type": "Bug Bounty",
-    "url": "https://hackerone.com/coupang_tw",
-    "policy_url": "https://hackerone.com/coupang_tw",
-    "max_bounty_usd": 10000.0,
-    "min_bounty_usd": null,
-    "reward_types": [
-      "Cash",
-      "Swag"
-    ],
-    "scope_summary": [
-      "*.coupang_tw.com"
-    ],
-    "out_of_scope_summary": [],
-    "contact_email": null,
-    "security_txt_url": null,
-    "tags": [
-      "Web",
-      "HackerOne"
-    ],
-    "status": "Active",
-    "last_updated": "2026-10-27T04:25:48.886656+00:00"
+    "last_updated": "2026-10-28T04:56:35.687493+00:00"
   }
 ]
