@@ -35,7 +35,7 @@
       "Hardware"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:34.485756+00:00"
+    "last_updated": "2026-10-29T05:08:13.442774+00:00"
   },
   {
     "id": "microsoft-msrc",
@@ -72,7 +72,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:34.485808+00:00"
+    "last_updated": "2026-10-29T05:08:13.442803+00:00"
   },
   {
     "id": "meta-whitehat",
@@ -107,7 +107,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:34.485821+00:00"
+    "last_updated": "2026-10-29T05:08:13.442814+00:00"
   },
   {
     "id": "apple-security-bounty",
@@ -143,7 +143,7 @@
       "Cloud"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:34.485831+00:00"
+    "last_updated": "2026-10-29T05:08:13.442822+00:00"
   },
   {
     "id": "github-bug-bounty",
@@ -179,7 +179,7 @@
       "Cloud"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:34.485843+00:00"
+    "last_updated": "2026-10-29T05:08:13.442831+00:00"
   },
   {
     "id": "ethereum-immunefi",
@@ -214,7 +214,7 @@
       "Cryptography"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:34.485855+00:00"
+    "last_updated": "2026-10-29T05:08:13.442841+00:00"
   },
   {
     "id": "cisa-vdp",
@@ -245,7 +245,7 @@
       "Infrastructure"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:34.485867+00:00"
+    "last_updated": "2026-10-29T05:08:13.442850+00:00"
   },
   {
     "id": "hackerone-omarchy",
@@ -272,7 +272,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:35.687445+00:00"
+    "last_updated": "2026-10-29T05:08:14.877322+00:00"
   },
   {
     "id": "hackerone-common_codes",
@@ -299,7 +299,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:35.687478+00:00"
+    "last_updated": "2026-10-29T05:08:14.877365+00:00"
   },
   {
     "id": "hackerone-wolt",
@@ -326,7 +326,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:35.687487+00:00"
+    "last_updated": "2026-10-29T05:08:14.877374+00:00"
   },
   {
     "id": "hackerone-agoda-public",
@@ -353,7 +353,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:35.687493+00:00"
+    "last_updated": "2026-10-29T05:08:14.877379+00:00"
   },
   {
     "id": "sectxt-cloudflare-com",
@@ -380,7 +380,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:35.961067+00:00"
+    "last_updated": "2026-10-29T05:08:15.144271+00:00"
   },
   {
     "id": "sectxt-stripe-com",
@@ -407,7 +407,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:36.707375+00:00"
+    "last_updated": "2026-10-29T05:08:16.287454+00:00"
   },
   {
     "id": "sectxt-airbnb-com",
@@ -434,7 +434,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:37.836032+00:00"
+    "last_updated": "2026-10-29T05:08:16.918830+00:00"
   },
   {
     "id": "sectxt-gitlab-com",
@@ -461,7 +461,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:38.270039+00:00"
+    "last_updated": "2026-10-29T05:08:17.339811+00:00"
   },
   {
     "id": "rss-what",
@@ -487,6 +487,6 @@
       "Newly Announced"
     ],
     "status": "Active",
-    "last_updated": "2026-10-28T04:56:40.243025+00:00"
+    "last_updated": "2026-10-29T05:08:19.575940+00:00"
   }
 ]
