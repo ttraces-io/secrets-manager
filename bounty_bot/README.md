@@ -8,11 +8,11 @@
 
 | Metric | Value |
 | :--- | :--- |
-| **Total Tracked Programs** | **16** |
+| **Total Tracked Programs** | **15** |
 | **Paid Bug Bounties** | **10** |
-| **Vulnerability Disclosure Programs (VDPs)** | **6** |
+| **Vulnerability Disclosure Programs (VDPs)** | **5** |
 | **Combined Max Bounty Pool** | **$2,850,000.00** |
-| **Last Bot Sync** | `2026-11-03 05:59:37 UTC` |
+| **Last Bot Sync** | `2026-11-04 05:39:13 UTC` |
 
 ---
 
@@ -35,7 +35,6 @@
 | **Stripe Security Disclosure (security.txt)** | Direct / Self-Hosted | VDP (Unpaid) | *.stripe.com | [View Policy](https://hackerone.com/stripe#overview) | `Self-Hosted` `RFC 9116` `Web` | 🟢 Active |
 | **Airbnb Security Disclosure (security.txt)** | Direct / Self-Hosted | VDP (Unpaid) | *.airbnb.com | [View Policy](https://hackerone.com/airbnb#overview) | `Self-Hosted` `RFC 9116` `Web` | 🟢 Active |
 | **Gitlab Security Disclosure (security.txt)** | Direct / Self-Hosted | VDP (Unpaid) | *.gitlab.com | [View Policy](https://hackerone.com/gitlab/) | `Self-Hosted` `RFC 9116` `Web` | 🟢 Active |
-| **What ID verification changes mean for public bug bounty programs at Intigriti** | Other | VDP (Unpaid) | Refer to announcement | [View Policy](https://www.intigriti.com/blog/business-insights/what-id-verification-changes-mean-for-public-bug-bounty-programs-at-intigriti) | `RSS Discovered` `Newly Announced` | 🟢 Active |
 
 ---
 

@@ -35,7 +35,7 @@
       "Hardware"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.167553+00:00"
+    "last_updated": "2026-11-04T05:39:08.740286+00:00"
   },
   {
     "id": "microsoft-msrc",
@@ -72,7 +72,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.167588+00:00"
+    "last_updated": "2026-11-04T05:39:08.740323+00:00"
   },
   {
     "id": "meta-whitehat",
@@ -107,7 +107,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.167599+00:00"
+    "last_updated": "2026-11-04T05:39:08.740338+00:00"
   },
   {
     "id": "apple-security-bounty",
@@ -143,7 +143,7 @@
       "Cloud"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.167607+00:00"
+    "last_updated": "2026-11-04T05:39:08.740350+00:00"
   },
   {
     "id": "github-bug-bounty",
@@ -179,7 +179,7 @@
       "Cloud"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.167617+00:00"
+    "last_updated": "2026-11-04T05:39:08.740363+00:00"
   },
   {
     "id": "ethereum-immunefi",
@@ -214,7 +214,7 @@
       "Cryptography"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.167628+00:00"
+    "last_updated": "2026-11-04T05:39:08.740375+00:00"
   },
   {
     "id": "cisa-vdp",
@@ -245,7 +245,7 @@
       "Infrastructure"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.167638+00:00"
+    "last_updated": "2026-11-04T05:39:08.740388+00:00"
   },
   {
     "id": "hackerone-omarchy",
@@ -272,7 +272,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.806391+00:00"
+    "last_updated": "2026-11-04T05:39:09.558186+00:00"
   },
   {
     "id": "hackerone-common_codes",
@@ -299,7 +299,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.806431+00:00"
+    "last_updated": "2026-11-04T05:39:09.558217+00:00"
   },
   {
     "id": "hackerone-wolt",
@@ -326,7 +326,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.806443+00:00"
+    "last_updated": "2026-11-04T05:39:09.558227+00:00"
   },
   {
     "id": "hackerone-agoda-public",
@@ -353,7 +353,7 @@
       "HackerOne"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.806454+00:00"
+    "last_updated": "2026-11-04T05:39:09.558236+00:00"
   },
   {
     "id": "sectxt-cloudflare-com",
@@ -380,7 +380,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:34.966457+00:00"
+    "last_updated": "2026-11-04T05:39:09.693513+00:00"
   },
   {
     "id": "sectxt-stripe-com",
@@ -407,7 +407,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:35.621963+00:00"
+    "last_updated": "2026-11-04T05:39:10.719106+00:00"
   },
   {
     "id": "sectxt-airbnb-com",
@@ -434,7 +434,7 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:36.079090+00:00"
+    "last_updated": "2026-11-04T05:39:11.918743+00:00"
   },
   {
     "id": "sectxt-gitlab-com",
@@ -461,32 +461,6 @@
       "Web"
     ],
     "status": "Active",
-    "last_updated": "2026-11-03T05:59:36.408646+00:00"
-  },
-  {
-    "id": "rss-what",
-    "name": "What ID verification changes mean for public bug bounty programs at Intigriti",
-    "organization": "What",
-    "platform": "Other",
-    "program_type": "Bug Bounty",
-    "url": "https://www.intigriti.com/blog/business-insights/what-id-verification-changes-mean-for-public-bug-bounty-programs-at-intigriti",
-    "policy_url": "https://www.intigriti.com/blog/business-insights/what-id-verification-changes-mean-for-public-bug-bounty-programs-at-intigriti",
-    "max_bounty_usd": null,
-    "min_bounty_usd": null,
-    "reward_types": [
-      "Cash"
-    ],
-    "scope_summary": [
-      "Refer to announcement"
-    ],
-    "out_of_scope_summary": [],
-    "contact_email": null,
-    "security_txt_url": null,
-    "tags": [
-      "RSS Discovered",
-      "Newly Announced"
-    ],
-    "status": "Active",
-    "last_updated": "2026-11-03T05:59:37.797454+00:00"
+    "last_updated": "2026-11-04T05:39:12.245301+00:00"
   }
 ]
